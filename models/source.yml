@@ -1,0 +1,32 @@
+version: 2
+
+sources:
+  - name: raw
+    database: FREENOW_NEW_DB          
+    schema: FREENOW_NEW_SCHEMA                
+    tables:
+      - name: freenow_drivers
+      - name: freenow_offers
+      - name: freenow_bookings
+
+models:
+  - name: stg_drivers
+    columns:
+      - name: driver_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_offers
+    columns:
+      - name: offer_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_bookings
+    columns:
+      - name: booking_id
+        tests:
+          - not_null
+          - unique

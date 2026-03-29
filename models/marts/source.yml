@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: driver_activity
+    description: "Daily aggregated metrics for each driver to analyze engagement and performance"
+
+    columns:
+      - name: driver_id
+        description: "Unique identifier of the driver"
+        tests:
+          - not_null
+
+      - name: activity_date
+        description: "Date of activity"
+        tests:
+          - not_null
+
+      - name: offers_received
+        description: "Total number of offers received"
+
+      - name: offers_accepted
+        description: "Number of accepted offers"
+
+      - name: trips_completed
+        description: "Total completed trips"
+
+      - name: total_earnings
+        description: "Total earnings in euros"
+
+      - name: acceptance_rate
+        description: "Accepted offers divided by total offers"
+
+      - name: engagement_rate
+        description: "Offers read divided by total offers"
+
+    tests:
+      - unique:
+          column_name: "driver_id || '-' || activity_date"
