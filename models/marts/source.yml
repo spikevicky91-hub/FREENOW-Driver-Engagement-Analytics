@@ -36,3 +36,6 @@ models:
     tests:
       - unique:
           column_name: "driver_id || '-' || activity_date"
+  
+  - name: ab_test_summary
+    description: "Summary of AB test results for driver engagement and performance"

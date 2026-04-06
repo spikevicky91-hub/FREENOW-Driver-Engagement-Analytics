@@ -11,9 +11,9 @@ WITH cleaned AS (
 
         UPPER(status) AS status,
 
-        TRY_TO_NUMBER(estimated_route_fare) AS estimated_route_fare
+        TRY_TO_NUMBER(estimated_route_fare) AS estimated_route_fare 
 
-    FROM {{ source('raw', 'freenow_bookings') }}
+    FROM {{ source('raw', 'freenow_bookings') }} --raw ingestion table
 
 ),
 
@@ -28,8 +28,7 @@ deduplicated AS (
             ) AS rn
         FROM cleaned
     )
-    WHERE rn = 1
+    WHERE rn = 1 --latest record for each booking_id, in case of duplicates
 
 )
-
 SELECT * FROM deduplicated
