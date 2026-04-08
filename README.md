@@ -1,15 +1,24 @@
-Welcome to your new dbt project!
+# FREENOW Driver Engagement Analytics
 
-### Using the starter project
+## Overview
+This project transforms raw data into a data product and analyzes driver engagement.
 
-Try running the following commands:
+## Tech Stack
+- Snowflake
+- dbt
+- Python (Pandas, Matplotlib)
+
+## Data Pipeline
+1. Staging layer: data cleaning & standardization
+2. Mart layer: driver_activity table
+3. Analysis: trends & segmentation
+
+## Key Insights
+- Driver engagement directly impacts acceptance rate
+- Large portion of drivers are low engagement
+- Opportunities for incentives and better matching
+
+## How to Run
 - dbt run
 - dbt test
-
-
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+- Run Python analysis script
